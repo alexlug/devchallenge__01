@@ -2,21 +2,19 @@
 
 html, body {
     height: 100%;
+    background-color: $white;
 }
 
-.page {
-    
+// CONTENT
+.content {
+    &__wrapper {
+        width: 1180px;
+        margin: 0 auto;
+    }
 }
 
-.page__wrapper {
-    min-height: 100%;
-    margin-bottom: -50px;
+table, th, td {
+    border: 1px solid black;
 }
 
-* html .page__wrapper {
-    height: 100%;
-}
 
-.page__buffer {
-    height: 50px;
-}

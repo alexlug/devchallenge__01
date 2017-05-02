@@ -2,23 +2,101 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head.pug
+    include ../components/header/header.pug
     include ../components/example/example.pug
     include ../components/footer/footer.pug
 
     head
         +head(head.defaults)
-    body.page
-        |%=symbols=%
+    body
+        section.main
+            +header()
+            .content__wrapper
+                .main__title
+                    .main__title-head
+                    h1.main__h1
+                    .main__title-footer
+                .page__buffer
+                button.main__scroll-btn
 
-        section.page__wrapper
+        section.programs
+            .content__wrapper
+                .content__title Programs
+                .content__title-descr
+                .programs__tabs
+                    ul
+                        li foo
+                        li bar
+                        li baz
+                .programs__tab
+                    .programs__photo
+                    .programs__bg
+                    .programs__info
+                        .programs__title
+                        .programs__certificate
+                        .programs__price
+                        .programs__btn
+                .programs__descr
+                    .programs__descr-item
+                    .programs__descr-item
+                    .programs__descr-item
+                - objects = [['ss', 'aa', 'ee'], ['ss', 'aa', 'ee']]
+                table.programs__table
+                    tbody
+                        tr
+                            th
+                            th TA
+                            th Start Date
+                            th Deadline
+                            th Completion Date
+                            th Comment
+                        tr
+                            th A1
+                            th Chris
+                            td dsfds
+                            td dfs dfd
+                            td dsff s
+                            td fds fsd
 
-            //- Include your components here
-            +example()
+        section.gallery
+            .content__title_white gallery
+            .content__title-descr
+            .gallery__slider
+                .slider__item
+                .slider__item
+                .slider__item
+            .slider__pagination
 
-            .page__buffer
+        section.testimonials
+            .content__title_white testimonials
+            .content__title-descr
+            .testimonials__slider
+                .slider__item
+                .slider__item
+                .slider__item
 
-        .page__footer
-            +footer()
+        section.partners
+            .content__title_white partners
+            .content__title-descr
+            .partners__slider
+                .slider__item
+                .slider__item
+                .slider__item
+
+        section.questions
+            .content__title_white questions
+            .content__title-descr
+            form.questions__form
+                .questions__form-fields
+                    input
+                    input
+                .questions__send
+
+        footer.footer
+            .content__title_white questions
+            .content__title-descr
+            .footer__table
+            .footer__copyright
 
         script(src='%=static=%js/separate-js/svg4everybody.min.js')
         script svg4everybody();
