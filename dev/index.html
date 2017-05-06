@@ -12,6 +12,7 @@
       
       
       <!--[if (gt IE 9)|!(IE)]><!--><link href="/static/css/main.css" rel="stylesheet" type="text/css"><!--<![endif]-->
+      <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
       <meta property="og:title" content="#{data.title}">
       <meta property="og:title" content="">
       <meta property="og:url" content="">
@@ -73,6 +74,9 @@
     </section>
     <section class="programs">
       <div class="content__wrapper">
+        <!--span-->
+        <!--    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"  fill='#000' width="15" height="16" viewBox="0 0 30 30")-->
+        <!--        image(xlink:href="data:img/png;base64, iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABJlBMVEUAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAACfIhmCAAAAYHRSTlMAU/qOAtj8H0+RxfQSO3yx6gko/mec2yD5XRY+Zo+28v3CmXBJnsbu99CpbQE3yPAaFdPzG9z2Qh3kSiTnUC3rWzRpkNLexAgvWECAaMHxqruV10sqA+xsBEeYjRDo1AfPuFcRAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQZJREFUKM9jYEAGjEzMDLgBC2sCGztuaY6EhARO3NJcQGluHlyyvAkgwIdLmh8sLSCIXVZIGCydIIJdWhQimyDGgk1WXAIqnSCJJiMlLSMrJw+TTVBQVFJWEYeYoaKqpp6ADWhoamnrMGgk4AG6DHp4ZPUNGAyNcMoa6wItNzHFIWtmDnachSVWWSYrqL+sbbDIKtjC/W1njynrgBQujsbo0k4o4eaMJuuCPTpgwBVV2g3dancUaYxg90CJMgyXeyJLe2FIeyNL+8Cs9PWDsvyRpTkhYgF2DIaBbJg+CwCJBAWD2SFyII5EKJI0MNLCwiNgvEhQHFsgSUdJRMcgcSN8YuPiwSwAu5+jdzpKWmAAAAAASUVORK5CYII=")-->
         <h2 class="content__title">Programs</h2>
         <div class="content__title-descr">We share their experience and professional barista championships multiple winners</div>
         <ul class="programs__tabs">
@@ -82,7 +86,7 @@
         </ul>
         <div class="programs__tab-wrap">
           <div class="programs__tab active">
-            <div class="programs__tab-content"><img class="programs__photo" src="/static/img/content/program-img.jpg">
+            <div class="programs__tab-content"><span class="programs__photo"><img src="/static/img/content/program-img.jpg"></span>
               <div class="programs__bg">Basic</div>
                 <div class="programs__info">
                   <div class="programs__title">Beginners Course</div>
@@ -93,7 +97,7 @@
             </div>
             <div class="programs__descr">
               <div class="programs__descr-item">
-                <div class="programs__descr-item-title">Provenance coffee and basic concepts:</div>
+                <div class="programs__descr-item-title"><span>Provenance<br>coffee and basic concepts:</span></div>
                 <div class="programs__descr-item-content">
                   <p>Legend of the origin of coffee.</p>
                   <ul>
@@ -109,20 +113,20 @@
                 </div>
               </div>
               <div class="programs__descr-item">
-                <div class="programs__descr-item-title">coffee production technology:</div>
+                <div class="programs__descr-item-title"><span>coffee production technology:</span></div>
                 <div class="programs__descr-item-content">
                   <ul>
                     <li>Methods for collecting coffee berries</li>
                     <li>Processing collected berries</li>
                     <li>Calibration and sorting</li>
-                    <li>Some methods of classification and labeling    of coffee beans.</li>
+                    <li>Some methods of classification and labeling of coffee beans.</li>
                     <li>Formation of grade names.</li>
                     <li>Storage of green (not fried) Coffee</li>
                   </ul>
                 </div>
               </div>
               <div class="programs__descr-item">
-                <div class="programs__descr-item-title">roasting Technology bean. and Stage types of roasting.</div>
+                <div class="programs__descr-item-title"><span>roasting Technology<br>bean. and<br>Stage types of roasting.</span></div>
                 <ul class="programs__descr-item-content">
                   <li>The technology of roasting coffee beans.</li>
                   <li>Changes in the beans.</li>
@@ -139,44 +143,131 @@
         <div class="programs__table-title">The course also includes:</div>
         <table class="programs__table">
           <tbody>
-            <tr>
-              <th>gfhgf</th>
-              <th>TA</th>
+            <tr class="active">
+              <th></th>
+              <th>Coffee machine and grinder - practice - types of coffee machines and coffee grinders</th>
+            </tr>
+            <tr class="active">
+              <th></th>
+              <th>What makes professional coffee machines and coffee grinders.</th>
             </tr>
             <tr>
-              <th>A1</th>
-              <th>Chris</th>
+              <th></th>
+              <th>Main components of coffee machines and coffee-Lathes, autolathes. Their purpose</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>How to choose a coffee machine and coffee grinder</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>The structure of the machine. How to maintain, clean and customize coffee machine</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>The structure of the grinders. How to maintain, clean and customize coffee Molko</th>
+            </tr>
+            <tr class="active">
+              <th></th>
+              <th>Making beverages - praktika- machines and espresso rules</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Technology and regulations frothed milk</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Terms of tasting coffee</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Terms of preparation of standard drinks line: espresso, cappuccino, latte and others.</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Latte Art - Features practice and the importance of Latte Art in business and the barista</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>1 views Latte Art - Pitching</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>2 views Latte Art - topping</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>3 views Latte Art - Etching</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>4 views Latte Art - chocolate chip stencils</th>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
     <section class="gallery">
-      <div class="content__title_white">gallery</div>
-      <div class="content__title-descr"></div>
+      <div class="content__title content__title_white">gallery</div>
+      <div class="content__title-descr content__title-descr_white">You yourself are testing the taste benefits of each method and select the type of cooking yourself</div>
       <div class="gallery__slider">
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
+        <div class="gallery__slider-item"><img src="/static/img/content/slider-1_1.jpg"></div>
+        <div class="gallery__slider-item"><img src="/static/img/content/slider-1_2.jpg"></div>
+        <div class="gallery__slider-item"><img src="/static/img/content/slider-1_3.jpg"></div>
+        <div class="gallery__slider-item"><img src="/static/img/content/slider-1_2.jpg"></div>
+        <div class="gallery__slider-item"><img src="/static/img/content/slider-1_3.jpg"></div>
       </div>
       <div class="slider__pagination"></div>
+      <div class="gallery__mask"></div>
     </section>
     <section class="testimonials">
-      <div class="content__title_white">testimonials</div>
-      <div class="content__title-descr"></div>
-      <div class="testimonials__slider">
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
+      <div class="content__wrapper">
+        <div class="content__title">testimonials</div>
+        <div class="content__title-descr">We have enough patience to teach you the art of coffee</div>
+        <div class="testimonials__slider">
+          <div class="testimonials__slider-item">
+            <div class="testimonials__img-wrap"><img src="/static/img/content/testimonials-1.jpg"><a class="testimonials__facebook">
+                <svg class="text" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#fff" width="10.925" height="20.5" viewBox="0 0 21.85 41">
+                  <path d="M16.079,-0.018 C13.164,-0.018 10.831,0.824 9.078,2.510 C7.326,4.195 6.450,6.566 6.450,9.625 L6.450,14.999 L0.006,14.999 L0.006,22.297 L6.450,22.297 L6.450,41.011 L14.184,41.011 L14.184,22.297 L20.603,22.297 L21.589,14.999 L14.184,14.999 L14.184,10.337 C14.184,9.156 14.436,8.268 14.942,7.675 C15.447,7.083 16.424,6.788 17.874,6.788 L21.841,6.788 L21.841,0.277 C20.477,0.081 18.556,-0.018 16.079,-0.018 L16.079,-0.018 Z"></path>
+                </svg></a></div>
+            <div class="testimonials__title">Alex Nikandrov</div>
+            <div class="testimonials__descr">Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!</div>
+          </div>
+          <div class="testimonials__slider-item">
+            <div class="testimonials__img-wrap"><img>
+              <div class="testimonials__facebook">
+                <svg class="text"></svg>
+              </div>
+            </div>
+            <div class="testimonials__title">Alex Nikandrov</div>
+            <div class="testimonials__descr">Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!</div>
+          </div>
+          <div class="testimonials__slider-item">
+            <div class="testimonials__img-wrap"><img>
+              <div class="testimonials__facebook">
+                <svg class="text"></svg>
+              </div>
+            </div>
+            <div class="testimonials__title">Alex Nikandrov</div>
+            <div class="testimonials__descr">Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!</div>
+          </div>
+        </div>
       </div>
+      <div class="testimonials__mask"></div>
     </section>
     <section class="partners">
-      <div class="content__title_white">partners</div>
-      <div class="content__title-descr"></div>
-      <div class="partners__slider">
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
-        <div class="slider__item"></div>
+      <div class="content__wrapper">
+        <div class="content__title_white">partners</div>
+        <div class="partners__slider">
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_1.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_2.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_3.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_4.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_5.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_6.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_5.png"></div>
+          <div class="partners__img-wrap"><img src="/static/img/content/logo_6.png"></div>
+        </div>
       </div>
     </section>
     <section class="questions">
@@ -199,6 +290,7 @@
     <!--script(src='/static/js/separate-js/svg4everybody.min.js')-->
     <!--script svg4everybody();-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="static/js/separate-js/start.js"></script>
   </body>
 </html>

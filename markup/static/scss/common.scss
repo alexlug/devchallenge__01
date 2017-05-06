@@ -20,20 +20,40 @@ table, th, td {
         position: relative;
         text-transform: uppercase;
         font-family: 'RobotoBlack', sans-serif;
+        &_white {
+            color: $white;
+        }
         &::before {
             content: '';
             position: absolute;
             display: inline-block;
-            background: url(/static/img/minified-svg/star.svg);
+            background-repeat: no-repeat;
+            //background: url(/static/img/minified-svg/star.svg);
+            @include bg-svg($star);
             top: 50%;
-            left: -20px;
-            width: 15px;
-            height: 15px;
+            left: -28px;
+            transform: translateY(-50%);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            background-repeat: no-repeat;
+            @include bg-svg($star);
+            top: 50%;
+            right: -28px;
             transform: translateY(-50%);
         }
     }
     &__title-descr {
         color: $blue;
+        &_white {
+            color: $white;
+        }
+        .gallery & {
+            width: 420px;
+            margin: 0 auto;
+        }
     }
     &__wrapper {
         width: 1180px;
@@ -41,6 +61,101 @@ table, th, td {
         text-align: center;
         position: relative;
         z-index: 1;
+        //.main & {
+        //    position: absolute;
+        //    bottom: -1px;
+        //    left: 0;
+        //    background: url(/static/img/content/mask1.png);
+        //    background-repeat: no-repeat;
+        //    background-position: bottom;
+        //    background-size: contain;
+        //    width: 100%;
+        //    height: inherit;
+        //}
+        //.gallery & {
+        //    position: absolute;
+        //    bottom: -1px;
+        //    left: 0;
+        //    background: url(/static/img/content/mask2.png);
+        //    background-repeat: no-repeat;
+        //    background-position: bottom;
+        //    background-size: contain;
+        //    width: 100%;
+        //    height: inherit;
+        //}
     }
 }
+
+.slick-next_new {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    @include bg-svg($slide-arrow);
+    cursor: pointer;
+    .gallery & {
+        position: absolute;
+        bottom: 0;
+        left: calc(50% + 100px);
+        transform: translate(-50%, 100%);
+        border: 1px solid $beige;
+        background: transparent;
+        color: transparent;
+        width: 67px;
+        height: 67px;
+    }
+
+}
+.slick-prev_new {
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translate(0, -50%) rotate(-180deg);
+    @include bg-svg($slide-arrow);
+    cursor: pointer;
+    .gallery & {
+        bottom: 0;
+        left: calc(50% - 100px);
+        transform: translate(-50%, 100%);
+        border: 1px solid $beige;
+        background: transparent;
+        color: transparent;
+        width: 67px;
+        height: 67px;
+    }
+}
+
+.slick-slide {
+    .gallery & {
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
+        width: 750px;
+        height: 500px;
+    }
+}
+
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+    li {
+        margin: 0 10px;
+        button {
+            outline: none;
+            border: none;
+            width: 15px;
+            height: 15px;
+            color: transparent;
+            border-radius: 50%;
+            background-color: $black;
+        }
+        &.slick-active {
+            button {
+                background-color: $beige;
+            }
+        }
+    }
+}
+
 

@@ -18,14 +18,14 @@
     }
     &__mask {
         position: absolute;
-        bottom: -1px;
+        bottom: -10px;
         left: 0;
         background: url(/static/img/content/mask1.png);
         background-repeat: no-repeat;
         background-position: bottom;
         background-size: contain;
         width: 100%;
-        height: inherit;
+        height: 141px;
     }
     &__scroll-btn {
         width: 60px;
@@ -66,13 +66,11 @@
         align-items: center;
     }
     &__title-descr {
-        font-family: 'GeorgiaRegular', sans-serif;
         font-size: 17px;
         margin: 0 75px;
     }
     &__title-footer {
         margin: 60px 0 35px;
-        font-family: 'GeorgiaRegular', sans-serif;
         font-size: 21px;
     }
 }

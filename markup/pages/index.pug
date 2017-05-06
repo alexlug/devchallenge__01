@@ -6,8 +6,9 @@ html(class="no-js", lang="ru")
     include ../components/mixins/mixins.pug
 
     - var programList_1 = ["Chronicle of the spread of the coffee tree","What is coffee?","The structure of the coffee berry", "Arabica and Robusta", "Coffee Belt land","Fruiting coffee tree", "Seven steps of the coffee plantation to the consumer", "Breeding and hybridization of coffee tree"];
-        - var programList_2 = ["Methods for collecting coffee berries", "Processing collected berries", "Calibration and sorting", "Some methods of classification and labeling    of coffee beans.", "Formation of grade names.", "Storage of green (not fried) Coffee"];
-        - var programList_3 = ["The technology of roasting coffee beans.", "Changes in the beans.", "Stages and types of roasting.", "Roasted coffee. Monosorta and hood.", "Decaffeination of coffee", "Flavoring", "Storage roasted coffee"];
+    - var programList_2 = ["Methods for collecting coffee berries", "Processing collected berries", "Calibration and sorting", "Some methods of classification and labeling of coffee beans.", "Formation of grade names.", "Storage of green (not fried) Coffee"];
+    - var programList_3 = ["The technology of roasting coffee beans.", "Changes in the beans.", "Stages and types of roasting.", "Roasted coffee. Monosorta and hood.", "Decaffeination of coffee", "Flavoring", "Storage roasted coffee"];
+    - var tableList = ["Coffee machine and grinder - practice - types of coffee machines and coffee grinders", "What makes professional coffee machines and coffee grinders.", "Main components of coffee machines and coffee-Lathes, autolathes. Their purpose", "How to choose a coffee machine and coffee grinder", "The structure of the machine. How to maintain, clean and customize coffee machine"];
 
     head
         +head(head.defaults)
@@ -40,6 +41,9 @@ html(class="no-js", lang="ru")
 
         section.programs
             .content__wrapper
+                //span
+                //    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"  fill='#000' width="15" height="16" viewBox="0 0 30 30")
+                //        image(xlink:href="data:img/png;base64, iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABJlBMVEUAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAACfIhmCAAAAYHRSTlMAU/qOAtj8H0+RxfQSO3yx6gko/mec2yD5XRY+Zo+28v3CmXBJnsbu99CpbQE3yPAaFdPzG9z2Qh3kSiTnUC3rWzRpkNLexAgvWECAaMHxqruV10sqA+xsBEeYjRDo1AfPuFcRAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQZJREFUKM9jYEAGjEzMDLgBC2sCGztuaY6EhARO3NJcQGluHlyyvAkgwIdLmh8sLSCIXVZIGCydIIJdWhQimyDGgk1WXAIqnSCJJiMlLSMrJw+TTVBQVFJWEYeYoaKqpp6ADWhoamnrMGgk4AG6DHp4ZPUNGAyNcMoa6wItNzHFIWtmDnachSVWWSYrqL+sbbDIKtjC/W1njynrgBQujsbo0k4o4eaMJuuCPTpgwBVV2g3dancUaYxg90CJMgyXeyJLe2FIeyNL+8Cs9PWDsvyRpTkhYgF2DIaBbJg+CwCJBAWD2SFyII5EKJI0MNLCwiNgvEhQHFsgSUdJRMcgcSN8YuPiwSwAu5+jdzpKWmAAAAAASUVORK5CYII=")
                 h2.content__title Programs
                 .content__title-descr We share their experience and professional barista championships multiple winners
                 ul.programs__tabs
@@ -52,63 +56,153 @@ html(class="no-js", lang="ru")
                 .programs__tab-wrap
                     .programs__tab.active
                         .programs__tab-content
-                            img.programs__photo(src='/static/img/content/program-img.jpg')
+                            span.programs__photo
+                                img(src='/static/img/content/program-img.jpg')
                             .programs__bg Basic
                             + programs__info('Beginners Course', '240', '1500')
                         .programs__descr
                             .programs__descr-item
-                                .programs__descr-item-title Provenance coffee and basic concepts:
+                                .programs__descr-item-title
+                                    span Provenance
+                                        br
+                                        |coffee and basic concepts:
                                 .programs__descr-item-content
                                     p Legend of the origin of coffee.
                                     ul
                                         for content in programList_1
                                             li= content
                             .programs__descr-item
-                                .programs__descr-item-title coffee production technology:
+                                .programs__descr-item-title
+                                    span coffee production technology:
                                 .programs__descr-item-content
                                     ul
                                         for content in programList_2
                                             li= content
                             .programs__descr-item
-                                .programs__descr-item-title roasting Technology bean. and Stage types of roasting.
+                                .programs__descr-item-title
+                                    span roasting Technology
+                                        br
+                                        | bean. and
+                                        br
+                                        | Stage types of roasting.
                                 ul.programs__descr-item-content
                                         for content in programList_3
                                             li= content
                 .programs__table-title The course also includes:
                 table.programs__table
                     tbody
+                        tr.active
+                            th
+                            th Coffee machine and grinder - practice - types of coffee machines and coffee grinders
+                        tr.active
+                            th
+                            th What makes professional coffee machines and coffee grinders.
                         tr
-                            th gfhgf
-                            th TA
+                            th
+                            th Main components of coffee machines and coffee-Lathes, autolathes. Their purpose
                         tr
-                            th A1
-                            th Chris
+                            th
+                            th How to choose a coffee machine and coffee grinder
+                        tr
+                            th
+                            th The structure of the machine. How to maintain, clean and customize coffee machine
+                        tr
+                            th
+                            th The structure of the grinders. How to maintain, clean and customize coffee Molko
+                        tr.active
+                            th
+                            th Making beverages - praktika- machines and espresso rules
+                        tr
+                            th
+                            th Technology and regulations frothed milk
+                        tr
+                            th
+                            th Terms of tasting coffee
+                        tr
+                            th
+                            th Terms of preparation of standard drinks line: espresso, cappuccino, latte and others.
+                        tr
+                            th
+                            th Latte Art - Features practice and the importance of Latte Art in business and the barista
+                        tr
+                            th
+                            th 1 views Latte Art - Pitching
+                        tr
+                            th
+                            th 2 views Latte Art - topping
+                        tr
+                            th
+                            th 3 views Latte Art - Etching
+                        tr
+                            th
+                            th 4 views Latte Art - chocolate chip stencils
 
 
         section.gallery
-            .content__title_white gallery
-            .content__title-descr
+            .content__title.content__title_white gallery
+            .content__title-descr.content__title-descr_white You yourself are testing the taste benefits of each method and select the type of cooking yourself
             .gallery__slider
-                .slider__item
-                .slider__item
-                .slider__item
+                .gallery__slider-item
+                    img(src='/static/img/content/slider-1_1.jpg')
+                .gallery__slider-item
+                    img(src='/static/img/content/slider-1_2.jpg')
+                .gallery__slider-item
+                    img(src='/static/img/content/slider-1_3.jpg')
+                .gallery__slider-item
+                    img(src='/static/img/content/slider-1_2.jpg')
+                .gallery__slider-item
+                    img(src='/static/img/content/slider-1_3.jpg')
             .slider__pagination
-
+            .gallery__mask
         section.testimonials
-            .content__title_white testimonials
-            .content__title-descr
-            .testimonials__slider
-                .slider__item
-                .slider__item
-                .slider__item
+            .content__wrapper
+                .content__title testimonials
+                .content__title-descr We have enough patience to teach you the art of coffee
+                .testimonials__slider
+                    .testimonials__slider-item
+                        .testimonials__img-wrap
+                            img(src='/static/img/content/testimonials-1.jpg')
+                            a.testimonials__facebook
+                                svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#fff" width="10.925" height="20.5" viewBox="0 0 21.85 41")
+                                    path(d="M16.079,-0.018 C13.164,-0.018 10.831,0.824 9.078,2.510 C7.326,4.195 6.450,6.566 6.450,9.625 L6.450,14.999 L0.006,14.999 L0.006,22.297 L6.450,22.297 L6.450,41.011 L14.184,41.011 L14.184,22.297 L20.603,22.297 L21.589,14.999 L14.184,14.999 L14.184,10.337 C14.184,9.156 14.436,8.268 14.942,7.675 C15.447,7.083 16.424,6.788 17.874,6.788 L21.841,6.788 L21.841,0.277 C20.477,0.081 18.556,-0.018 16.079,-0.018 L16.079,-0.018 Z")
+                        .testimonials__title Alex Nikandrov
+                        .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
+                    .testimonials__slider-item
+                        .testimonials__img-wrap
+                            img
+                            .testimonials__facebook
+                                svg.text()
+                        .testimonials__title Alex Nikandrov
+                        .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
+                    .testimonials__slider-item
+                        .testimonials__img-wrap
+                            img
+                            .testimonials__facebook
+                                svg.text()
+                        .testimonials__title Alex Nikandrov
+                        .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
 
+            .testimonials__mask
         section.partners
-            .content__title_white partners
-            .content__title-descr
-            .partners__slider
-                .slider__item
-                .slider__item
-                .slider__item
+            .content__wrapper
+                .content__title_white partners
+                .partners__slider
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_1.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_2.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_3.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_4.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_5.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_6.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_5.png')
+                    .partners__img-wrap
+                        img(src='/static/img/content/logo_6.png')
 
         section.questions
             .content__title_white questions
@@ -128,4 +222,5 @@ html(class="no-js", lang="ru")
         //script(src='%=static=%js/separate-js/svg4everybody.min.js')
         //script svg4everybody();
         script(src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js")
         script(src="static/js/separate-js/start.js")

@@ -1,11 +1,13 @@
 .btn {
     outline: none;
+    cursor: pointer;
+    padding: 20px 75px;
     border-radius: 2px;
     border: 1px solid $black;
     font-family: 'RobotoBlack', sans-serif;
+    text-align: center;
     text-decoration: none;
     font-size: 17px;
-    padding: 20px 75px;
     text-transform: uppercase;
     &_black {
         background-color: $black;
