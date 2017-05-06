@@ -6,7 +6,7 @@ const path = require('path');
 /**
  * Check, that file is task or watcher
  * All files with
- * 1) "example-" in name or path;
+ * 1) "mixins-" in name or path;
  * 2) "/helpers/" in path;
  * 3) start from _ char;
  * All that files won't be used

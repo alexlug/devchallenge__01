@@ -3,8 +3,11 @@ html(class="no-js", lang="ru")
 
     include ../components/head/head.pug
     include ../components/header/header.pug
-    include ../components/example/example.pug
-    include ../components/footer/footer.pug
+    include ../components/mixins/mixins.pug
+
+    - var programList_1 = ["Chronicle of the spread of the coffee tree","What is coffee?","The structure of the coffee berry", "Arabica and Robusta", "Coffee Belt land","Fruiting coffee tree", "Seven steps of the coffee plantation to the consumer", "Breeding and hybridization of coffee tree"];
+        - var programList_2 = ["Methods for collecting coffee berries", "Processing collected berries", "Calibration and sorting", "Some methods of classification and labeling    of coffee beans.", "Formation of grade names.", "Storage of green (not fried) Coffee"];
+        - var programList_3 = ["The technology of roasting coffee beans.", "Changes in the beans.", "Stages and types of roasting.", "Roasted coffee. Monosorta and hood.", "Decaffeination of coffee", "Flavoring", "Storage roasted coffee"];
 
     head
         +head(head.defaults)
@@ -13,50 +16,74 @@ html(class="no-js", lang="ru")
             +header()
             .content__wrapper
                 .main__title
+                    span
+                        svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="89.5" height="15" viewBox="0 0 179 30")
+                            image(xlink:href="data:img/png;base64,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")
                     .main__title-head
-                    h1.main__h1
-                    .main__title-footer
-                .page__buffer
+                        span
+                            svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="101.5" height="6.5" viewBox="0 0 203 13")
+                                image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAAANCAMAAAAwlGqoAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB/lBMVEUAAADNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHsAAAAOjQiwAAAAqHRSTlMADRAcICswOkABHy49TFBbYGlweICHkJagpLCzwMLQ0eDw/gQTIk9ebXyKmai3xdTj8gcWJTRDUX+Onau6ydjm9QsaKDdGVWRyga+9zNvq+Q4dLDtJWGd2hZOisd7t/CE+TVxqeYiXprTD0uEPHi08S1pod4aV7zlIV2Z1hKHPChljvs0IFyZSYY+erLvK2ej3BRQjMkFvfYybqrnI1uX0AxJOXWx7p7bPiBjoAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAalJREFUSMfVlnk31UEch2/TGBMa0zSNMU3TTPsmpSLJUirt+64SQpbsZSna90XaEIUiXmZd4vrvx3G59z6v4POcM/Ocr88X+SwAC2EUisah3uHNIgBiYCyKw4tJPF3ClvJlIkEmquV6hVlprXOrRicI9VLfarAGrkUI43VkPd3ANvJNYrPcopL0VpNst7nto9NnrqemgB1wJ9qFU0kapYzt5ulij8xQe3WmybLZLmcGU+faZR/YD3PRAXyQHKJ57DA/IoSUR9UxfdycsCfdqWBOnaXLaXAGnkXn8HlygV5kl/hlcUVeVflaG3PNXnc35nWqt0tMwU1cSIpoMbvFS0SpLFO3dbmpsJXOhXrbjF38VIE7sBrV4FpSR+tZA28Ud/+Xwlh7b0opwpvpfYvxgjfhZtJCW9l9/uDfW2tTSuv2cHprQcrVQ/BosgGPAw14op/OYwOC5OLJM/Acvhhr80v6ijHOX4s38q16p9+bD7bDfYwkF086wSf4GX3BXwmh9Bvr4t2iR35XvbrP/LA/XX8kuXgyAAZhgf9A+EV+0yE2PHYg/FEjgQPhL2LPBLVuTXeCAAAAAElFTkSuQmCC")
+                        span.main__title-descr Intensive program barista training
+                        span
+                            svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="101.5" height="6.5" viewBox="0 0 203 13")
+                                image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMsAAAANCAMAAAAwlGqoAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB/lBMVEUAAADNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHsAAAAOjQiwAAAAqHRSTlMAQDowKyAcEA3+8ODR0MLAs7CkoJaQh4B4cGlgW1BMPS4fAfLj1MW3qJmKfG1eTyITBPXm2Mm6q52Of1FDNCUWB/nq28y9r4FyZFVGNygaC/zt3rGik4V2Z1hJOywdDuHSw7Sml4h5alxNPiHvlYZ3aFpLPC0eD8+hhHVmV0g5zb5jGQr36NnKu6yej2FSJhcI9OXWyLmqm4x9b0EyIxQFtqd7bF1OEgNuVrMAAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAaZJREFUSMdjYGRiZmFlY+dgGAZgBQxwcnFxc/Pw8vELCAoJi4iKiUtISknLyMoxyjMrsCqysysNtEtJ8AthoMylwq3Kq8avLqghrCmqJa4tqSOtK6vHyMjMrM9qwG440F4hxS8EgRGXMbcJrym/maC5sIWopbiVpKS0tLWsDaMtsx2rPbvDUPILQeDI5cTtzOvC7yroJiwsKuou7iHpKe0l683ow+zL6sfuP5T8QhAEcAVyB/Hy8vMHC4YIh4qGiYdLRkhHykYxRjPHsMayxw0lvxAGXFzx3Am8ifxJgsnCKaKp4mmS6dIZspmMWdmKQ8UvnFw53Ny80FI2VzRPPF+yQLpQtoixmLmEtZS9bBDFCyRtlfPzCwpWANNWpXiVZLV0jWwtYx0ptR9dnArJ8/X8DYg83wjP803szYOoHGvhauVu423n7xDsFO4S7RYXl5Tske4Fl8V9rP3sE6jkVGr4ZSLXJO7JvFP4pwpOE54uOkN8puQsaWlZ2dmMc5jnss5jn08vpxLhF1h1vkBwIbg6XyS5WHqJ7FJQdZ7Nuox9+UC7kGgAAKKFAVUDBb/pAAAAAElFTkSuQmCC")
+                    h1.main__h1 Barista Training in #[span amsterdam]
+                    .main__title-footer On the basis of the company's largest coffee roasters
+                    span
+                        svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="139.5" height="6.5" viewBox="0 0 279 13")
+                            image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAARcAAAANCAMAAAC0N9qvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABuVBMVEUAAADNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHsAAACUaRfSAAAAkXRSTlMAOKjr8rhSAYiwChAgLzA/QE9QX2CAsSUVBgUUJDREU2Nwc4KQkqCissDB0NHg4fAm/Pbm1se3p5h4aVlJOSoaCRkpSFhod4eXtsbl9Yq8+9vLrJyNfW1eTj4uHw8OHj1NXWx8jKu72ur696GRgXJiQzMjEwSevt4M9OTVxbWllol2Vko3F6aGZ1dHKBjMnToLDEo2DgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHASURBVEjHY2AYJICRiXkiCyvbQDtjkAF2jokQwMk10E4ZKMDNzcPDy8cvICgkLAIXFJ0IA2LsMDE+cR4JbsmBdi61gBS3NI8Mn6yAnJC8iIKikqiyiqqaOqeGppa2jq6evv5EFADTZGCIEJOHCUL5RvrGuibapppmnOZqFiocopaKViLWQjYCtnx2PPbcgyZ5OXA78jjx2Qo4C7mIuCq6ibqreKiZc3pqemmb6Hrr+0wkCcAM9UUS80MLF0LAX59ZN0A7UNOPM0gtWCVENFQxTCRcKEIgki+KJ5o7hlr+juWO44niixdIEEoUSVJMFk1RCVZL5UzTDNRO183QzyTN38SGixeSWBaJ4UIQ6Ovr6mpra2pycmar5ajkiuYp5ouwCRUIFPIV8RRzl+AIBx4eAQEREVHRUrUyzXJdQ+r6m9hwSUcWrKByuBAClfpVutXaNZq1nHVq9Q2NVk3NLXatIyC9oAWCNzQQ2tTqVdpF3RQ7RDqFugQY+bp5ergdhlH5ggpgmUYMnGmUUTKNNM5MQwdA9foIBUAK2V5wIduHUsjyUrOQHQhAdPsFuVLuB1fKEwba7XQHo+1dXKBlcPWPAMVJT4vynVVLAAAAAElFTkSuQmCC")
                 button.main__scroll-btn
+                    span
+                        svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="12" height="7" viewBox="0 0 23.97 13.97")
+                            path(d="M11.965,13.967 C11.535,13.967 11.105,13.800 10.777,13.464 L0.458,2.905 C-0.199,2.234 -0.199,1.145 0.458,0.474 C1.114,-0.198 2.178,-0.198 2.835,0.474 L11.965,9.817 L21.096,0.474 C21.752,-0.198 22.816,-0.198 23.472,0.474 C24.129,1.145 24.129,2.234 23.472,2.905 L13.153,13.464 C12.825,13.800 12.395,13.967 11.965,13.967 Z")
+            .main__mask
 
         section.programs
             .content__wrapper
-                .content__title Programs
-                .content__title-descr
-                .programs__tabs
-                    ul
-                        li foo
-                        li bar
-                        li baz
-                .programs__tab
-                    .programs__photo
-                    .programs__bg
-                    .programs__info
-                        .programs__title
-                        .programs__certificate
-                        .programs__price
-                        .programs__btn
-                .programs__descr
-                    .programs__descr-item
-                    .programs__descr-item
-                    .programs__descr-item
-                - objects = [['ss', 'aa', 'ee'], ['ss', 'aa', 'ee']]
+                h2.content__title Programs
+                .content__title-descr We share their experience and professional barista championships multiple winners
+                ul.programs__tabs
+                    li.active
+                        a basic
+                    li
+                        a premium
+                    li
+                        a platinum
+                .programs__tab-wrap
+                    .programs__tab.active
+                        .programs__tab-content
+                            img.programs__photo(src='/static/img/content/program-img.jpg')
+                            .programs__bg Basic
+                            + programs__info('Beginners Course', '240', '1500')
+                        .programs__descr
+                            .programs__descr-item
+                                .programs__descr-item-title Provenance coffee and basic concepts:
+                                .programs__descr-item-content
+                                    p Legend of the origin of coffee.
+                                    ul
+                                        for content in programList_1
+                                            li= content
+                            .programs__descr-item
+                                .programs__descr-item-title coffee production technology:
+                                .programs__descr-item-content
+                                    ul
+                                        for content in programList_2
+                                            li= content
+                            .programs__descr-item
+                                .programs__descr-item-title roasting Technology bean. and Stage types of roasting.
+                                ul.programs__descr-item-content
+                                        for content in programList_3
+                                            li= content
+                .programs__table-title The course also includes:
                 table.programs__table
                     tbody
                         tr
-                            th
+                            th gfhgf
                             th TA
-                            th Start Date
-                            th Deadline
-                            th Completion Date
-                            th Comment
                         tr
                             th A1
                             th Chris
-                            td dsfds
-                            td dfs dfd
-                            td dsff s
-                            td fds fsd
+
 
         section.gallery
             .content__title_white gallery
@@ -98,8 +125,7 @@ html(class="no-js", lang="ru")
             .footer__table
             .footer__copyright
 
-        script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        script svg4everybody();
-
-        //- Main scripts. You can replace it, but I recommend you to leave it here
-        script(src='%=static=%js/main%=hash=%%=min=%.js')
+        //script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        //script svg4everybody();
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="static/js/separate-js/start.js")

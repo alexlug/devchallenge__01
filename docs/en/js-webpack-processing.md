@@ -10,9 +10,9 @@ If you do not know anything about webpack, please, read [documentation of webpac
 
 Webpack is already configured in TARS for comfortable work. But you can change `webpack.config.js` in the project root as you need.
 
-By default, there is only one entry point: `markup/static/js/main.js`. You can choose another entry point or points. **You have to use function `prepareEntryPoints` to prepare config object with entry points. It is necessary for Hot Module Replacement!**
+By default, there is only one entry point: `markup/static/js/start.js`. You can choose another entry point or points. **You have to use function `prepareEntryPoints` to prepare config object with entry points. It is necessary for Hot Module Replacement!**
 
-By default webpack can resolve dependencies, which is required by `require` (`import/export`, if babel is used). You can require JavaScript file of any component in any JavaScript file of your project by using alias `components`. Let's assume, that we are in `markup/static/js/main.js` and we'd like to require JavaScript file from component `example`. You can set relative path, but it is to difficult to calculate the correct path. So we can use alias `components`:
+By default webpack can resolve dependencies, which is required by `require` (`import/export`, if babel is used). You can require JavaScript file of any component in any JavaScript file of your project by using alias `components`. Let's assume, that we are in `markup/static/js/start.js` and we'd like to require JavaScript file from component `example`. You can set relative path, but it is to difficult to calculate the correct path. So we can use alias `components`:
 
 ```js
 import foo from 'components/example/example'; // useBabel: true

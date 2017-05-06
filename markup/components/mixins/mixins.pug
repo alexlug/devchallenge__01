@@ -1,0 +1,11 @@
+mixin programs__info(title, time, price)
+    .programs__info
+        .programs__title #{title}
+        .programs__certificate Certificate
+        .programs__time #{time}
+        .programs__price #{price}
+        + btn('registration', 'black')
+
+mixin btn(title, modifier)
+    if modifier = 'black'
+        a.btn.btn_black #{title}

@@ -116,7 +116,7 @@ dev/
             └── png-sprite/             # PNG-sprite for different dpi
             └── rastered-svg-images/    # Raster svg-images for IE8
             └── minified-svg/           # Minifies svg-images
-        └── js/                         # Ready main.js and separate js-files
+        └── js/                         # Ready start.js and separate js-files
             └── separate-js/   
     └── temp/                           # Temp folder for components' data
     ├── Ready pages and misc-files

@@ -1,2 +1,16 @@
-// GUI stylies of the project
-// For example, styles of the links, buttons and so on.
+.btn {
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid $black;
+    font-family: 'RobotoBlack', sans-serif;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 20px 75px;
+    text-transform: uppercase;
+    &_black {
+        background-color: $black;
+        border: none;
+        font-size: 14px;
+        color: $white;
+    }
+}

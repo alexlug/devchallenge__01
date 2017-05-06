@@ -10,7 +10,7 @@ const Handlebars = tars.packages.handlebars;
 const handlebarsHelpers = {
 
     /**
-     * This is an example of handlebars-helper
+     * This is an mixins of handlebars-helper
      * This helper gets string and returns it
      * @param  {String} str Source string
      * @return {String}     Result string

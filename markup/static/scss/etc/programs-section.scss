@@ -1,0 +1,118 @@
+.programs {
+    position: relative;
+    background: url(/static/img/content/program-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &__bg {
+        position: absolute;
+        font-size: 200px;
+        font-family: 'RobotoBlack', sans-serif;
+        color: $light;
+        right: 75px;
+        top: -105px;
+        text-transform: uppercase;
+        z-index: -1;
+    }
+    &__descr {
+        display: flex;
+        justify-content: flex-start;
+        margin: 80px 0 65px;
+    }
+    &__descr-item {
+        border-top: 1px solid $light-grey;
+        margin-right: 98px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &__descr-item-title {
+        font-size: 17px;
+        text-transform: uppercase;
+        font-family: 'RobotoBlack', sans-serif;
+    }
+    &__descr-item-content {
+        li {
+            &::before {
+                content: '-';
+            }
+        }
+    }
+    &__info {
+        padding-left: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__photo {
+        width: 640px;
+    }
+    &__tabs {
+        display: flex;
+        padding: 0 100px;
+        justify-content: space-around;
+        border-bottom: 1px solid $grey;
+        li {
+            cursor: pointer;
+            position: relative;
+            a {
+                font-family: 'RobotoBlack', sans-serif;
+                font-size: 21px;
+                line-height: 90px;
+                margin: 0 80px;
+                color: $grey;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                height: 3px;
+                background: $black;
+                bottom: -1px;
+                left: 50%;
+                width: 0;
+                transform: translateX(-50%);
+                transition: all 0.3s;
+            }
+            &.active {
+                a {
+                    color: $black;
+                }
+                &::after {
+                    width: 100%;
+                }
+            }
+            &:hover {
+                .no-touch & {
+                    a {
+                        color: $black;
+                    }
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__tab {
+        display: none;
+        &.active {
+            display: block;
+            position: relative;
+        }
+    }
+    &__tab-wrap {
+        margin-top: 100px;
+        text-align: left;
+    }
+    &__tab-content {
+        display: flex;
+    }
+    &__title {
+        font-size: 30px;
+    }
+}
+
+

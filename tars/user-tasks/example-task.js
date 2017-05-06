@@ -1,6 +1,6 @@
 'use strict';
 
-// This is example of task function
+// This is mixins of task function
 
 const gulp = tars.packages.gulp;
 const plumber = tars.packages.plumber;

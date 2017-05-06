@@ -8,7 +8,7 @@
 const jadeHelpers = {
 
     /**
-     * This is an example of handlebars-helper
+     * This is an mixins of handlebars-helper
      * This helper gets string and returns it
      * @param  {String} str Source string
      * @return {String}     Result string
