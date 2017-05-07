@@ -1,18 +1,40 @@
 .btn {
+    border: none;
     outline: none;
     cursor: pointer;
     padding: 20px 75px;
     border-radius: 2px;
-    border: 1px solid $black;
+    position: relative;
     font-family: 'RobotoBlack', sans-serif;
     text-align: center;
     text-decoration: none;
-    font-size: 17px;
     text-transform: uppercase;
-    &_black {
-        background-color: $black;
-        border: none;
-        font-size: 14px;
-        color: $white;
+    background-color: $black;
+    font-size: 14px;
+    color: $white;
+    transition: all .6s;
+    &:hover{
+        background: transparent;
+        color: $black;
+    }
+    &:before, &:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: $black;
+        transition: 400ms ease all;
+    }
+    &:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+    }
+    &:hover:before, &:hover:after{
+        width:100%;
+        transition: 800ms ease all;
     }
 }

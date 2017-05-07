@@ -85,6 +85,16 @@
             font-size: 31px;
         }
     }
+    &__star-left, &__star-right {
+        position: relative;
+        top: -10px;
+    }
+    &__star-left {
+        left: -25px;
+    }
+    &__star-right {
+        right: -25px;
+    }
     &__tabs {
         display: flex;
         padding: 0 100px;
@@ -214,6 +224,25 @@
         margin: 15px 0 40px;
         font-family: 'GeorgiaBold', sans-serif;
     }
+}
+
+.parralax-1 {
+    left: -2vw;
+    top: -5vh;
+}
+.parralax-2 {
+    right: -4vw;
+    bottom: 60%;
+}
+.parralax-3 {
+    right: 0;
+    bottom: -150vh;
+    z-index: 1;
+}
+.parralax-4 {
+    left: 2vw;
+    bottom: -140vh;
+    z-index: 1;
 }
 
 

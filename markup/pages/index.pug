@@ -8,14 +8,16 @@ html(class="no-js", lang="ru")
     - var programList_1 = ["Chronicle of the spread of the coffee tree","What is coffee?","The structure of the coffee berry", "Arabica and Robusta", "Coffee Belt land","Fruiting coffee tree", "Seven steps of the coffee plantation to the consumer", "Breeding and hybridization of coffee tree"];
     - var programList_2 = ["Methods for collecting coffee berries", "Processing collected berries", "Calibration and sorting", "Some methods of classification and labeling of coffee beans.", "Formation of grade names.", "Storage of green (not fried) Coffee"];
     - var programList_3 = ["The technology of roasting coffee beans.", "Changes in the beans.", "Stages and types of roasting.", "Roasted coffee. Monosorta and hood.", "Decaffeination of coffee", "Flavoring", "Storage roasted coffee"];
-    - var tableList = ["Coffee machine and grinder - practice - types of coffee machines and coffee grinders", "What makes professional coffee machines and coffee grinders.", "Main components of coffee machines and coffee-Lathes, autolathes. Their purpose", "How to choose a coffee machine and coffee grinder", "The structure of the machine. How to maintain, clean and customize coffee machine"];
+    - var navList_footer = ['program', 'gallery', 'testimonials', 'contact'];
 
     head
         +head(head.defaults)
-    body
+    body(data-type="background")
         section.main
+            img(src='/static/img/content/mask1.png').main__mask
+            img(src='/static/img/content/parallax_0.png' data-type="content").parralax-0
             +header()
-            .content__wrapper
+            .content__wrapper.content__wrapper_top
                 .main__title
                     span
                         svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="89.5" height="15" viewBox="0 0 179 30")
@@ -33,18 +35,23 @@ html(class="no-js", lang="ru")
                     span
                         svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="139.5" height="6.5" viewBox="0 0 279 13")
                             image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAARcAAAANCAMAAAC0N9qvAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABuVBMVEUAAADNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHvNtHsAAACUaRfSAAAAkXRSTlMAOKjr8rhSAYiwChAgLzA/QE9QX2CAsSUVBgUUJDREU2Nwc4KQkqCissDB0NHg4fAm/Pbm1se3p5h4aVlJOSoaCRkpSFhod4eXtsbl9Yq8+9vLrJyNfW1eTj4uHw8OHj1NXWx8jKu72ur696GRgXJiQzMjEwSevt4M9OTVxbWllol2Vko3F6aGZ1dHKBjMnToLDEo2DgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHASURBVEjHY2AYJICRiXkiCyvbQDtjkAF2jokQwMk10E4ZKMDNzcPDy8cvICgkLAIXFJ0IA2LsMDE+cR4JbsmBdi61gBS3NI8Mn6yAnJC8iIKikqiyiqqaOqeGppa2jq6evv5EFADTZGCIEJOHCUL5RvrGuibapppmnOZqFiocopaKViLWQjYCtnx2PPbcgyZ5OXA78jjx2Qo4C7mIuCq6ibqreKiZc3pqemmb6Hrr+0wkCcAM9UUS80MLF0LAX59ZN0A7UNOPM0gtWCVENFQxTCRcKEIgki+KJ5o7hlr+juWO44niixdIEEoUSVJMFk1RCVZL5UzTDNRO183QzyTN38SGixeSWBaJ4UIQ6Ovr6mpra2pycmar5ajkiuYp5ouwCRUIFPIV8RRzl+AIBx4eAQEREVHRUrUyzXJdQ+r6m9hwSUcWrKByuBAClfpVutXaNZq1nHVq9Q2NVk3NLXatIyC9oAWCNzQQ2tTqVdpF3RQ7RDqFugQY+bp5ergdhlH5ggpgmUYMnGmUUTKNNM5MQwdA9foIBUAK2V5wIduHUsjyUrOQHQhAdPsFuVLuB1fKEwba7XQHo+1dXKBlcPWPAMVJT4vynVVLAAAAAElFTkSuQmCC")
-                button.main__scroll-btn
+                button(target="#programs").main__scroll-btn
                     span
                         svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="12" height="7" viewBox="0 0 23.97 13.97")
                             path(d="M11.965,13.967 C11.535,13.967 11.105,13.800 10.777,13.464 L0.458,2.905 C-0.199,2.234 -0.199,1.145 0.458,0.474 C1.114,-0.198 2.178,-0.198 2.835,0.474 L11.965,9.817 L21.096,0.474 C21.752,-0.198 22.816,-0.198 23.472,0.474 C24.129,1.145 24.129,2.234 23.472,2.905 L13.153,13.464 C12.825,13.800 12.395,13.967 11.965,13.967 Z")
-            .main__mask
-
-        section.programs
+        section.programs#programs
+            img(src='/static/img/content/parallax_1.png' data-type="content").parralax-1
+            img(src='/static/img/content/parallax_2.png' data-type="content").parralax-2
+            img(src='/static/img/content/parallax_3.png' data-type="content").parralax-3
+            img(src='/static/img/content/parallax_4.png' data-type="content").parralax-4
             .content__wrapper
-                //span
-                //    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"  fill='#000' width="15" height="16" viewBox="0 0 30 30")
-                //        image(xlink:href="data:img/png;base64, iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABJlBMVEUAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAACfIhmCAAAAYHRSTlMAU/qOAtj8H0+RxfQSO3yx6gko/mec2yD5XRY+Zo+28v3CmXBJnsbu99CpbQE3yPAaFdPzG9z2Qh3kSiTnUC3rWzRpkNLexAgvWECAaMHxqruV10sqA+xsBEeYjRDo1AfPuFcRAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQZJREFUKM9jYEAGjEzMDLgBC2sCGztuaY6EhARO3NJcQGluHlyyvAkgwIdLmh8sLSCIXVZIGCydIIJdWhQimyDGgk1WXAIqnSCJJiMlLSMrJw+TTVBQVFJWEYeYoaKqpp6ADWhoamnrMGgk4AG6DHp4ZPUNGAyNcMoa6wItNzHFIWtmDnachSVWWSYrqL+sbbDIKtjC/W1njynrgBQujsbo0k4o4eaMJuuCPTpgwBVV2g3dancUaYxg90CJMgyXeyJLe2FIeyNL+8Cs9PWDsvyRpTkhYgF2DIaBbJg+CwCJBAWD2SFyII5EKJI0MNLCwiNgvEhQHFsgSUdJRMcgcSN8YuPiwSwAu5+jdzpKWmAAAAAASUVORK5CYII=")
+                span.programs__star-left
+                    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"  fill='#000' width="15" height="16" viewBox="0 0 30 30")
+                        image(xlink:href="data:img/png;base64, iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABJlBMVEUAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAACfIhmCAAAAYHRSTlMAU/qOAtj8H0+RxfQSO3yx6gko/mec2yD5XRY+Zo+28v3CmXBJnsbu99CpbQE3yPAaFdPzG9z2Qh3kSiTnUC3rWzRpkNLexAgvWECAaMHxqruV10sqA+xsBEeYjRDo1AfPuFcRAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQZJREFUKM9jYEAGjEzMDLgBC2sCGztuaY6EhARO3NJcQGluHlyyvAkgwIdLmh8sLSCIXVZIGCydIIJdWhQimyDGgk1WXAIqnSCJJiMlLSMrJw+TTVBQVFJWEYeYoaKqpp6ADWhoamnrMGgk4AG6DHp4ZPUNGAyNcMoa6wItNzHFIWtmDnachSVWWSYrqL+sbbDIKtjC/W1njynrgBQujsbo0k4o4eaMJuuCPTpgwBVV2g3dancUaYxg90CJMgyXeyJLe2FIeyNL+8Cs9PWDsvyRpTkhYgF2DIaBbJg+CwCJBAWD2SFyII5EKJI0MNLCwiNgvEhQHFsgSUdJRMcgcSN8YuPiwSwAu5+jdzpKWmAAAAAASUVORK5CYII=")
                 h2.content__title Programs
+                span.programs__star-right
+                    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"  fill='#000' width="15" height="16" viewBox="0 0 30 30")
+                        image(xlink:href="data:img/png;base64, iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABJlBMVEUAAAAiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIAAACfIhmCAAAAYHRSTlMAU/qOAtj8H0+RxfQSO3yx6gko/mec2yD5XRY+Zo+28v3CmXBJnsbu99CpbQE3yPAaFdPzG9z2Qh3kSiTnUC3rWzRpkNLexAgvWECAaMHxqruV10sqA+xsBEeYjRDo1AfPuFcRAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQZJREFUKM9jYEAGjEzMDLgBC2sCGztuaY6EhARO3NJcQGluHlyyvAkgwIdLmh8sLSCIXVZIGCydIIJdWhQimyDGgk1WXAIqnSCJJiMlLSMrJw+TTVBQVFJWEYeYoaKqpp6ADWhoamnrMGgk4AG6DHp4ZPUNGAyNcMoa6wItNzHFIWtmDnachSVWWSYrqL+sbbDIKtjC/W1njynrgBQujsbo0k4o4eaMJuuCPTpgwBVV2g3dancUaYxg90CJMgyXeyJLe2FIeyNL+8Cs9PWDsvyRpTkhYgF2DIaBbJg+CwCJBAWD2SFyII5EKJI0MNLCwiNgvEhQHFsgSUdJRMcgcSN8YuPiwSwAu5+jdzpKWmAAAAAASUVORK5CYII=")
                 .content__title-descr We share their experience and professional barista championships multiple winners
                 ul.programs__tabs
                     li.active
@@ -88,58 +95,223 @@ html(class="no-js", lang="ru")
                                 ul.programs__descr-item-content
                                         for content in programList_3
                                             li= content
-                .programs__table-title The course also includes:
-                table.programs__table
-                    tbody
-                        tr.active
-                            th
-                            th Coffee machine and grinder - practice - types of coffee machines and coffee grinders
-                        tr.active
-                            th
-                            th What makes professional coffee machines and coffee grinders.
-                        tr
-                            th
-                            th Main components of coffee machines and coffee-Lathes, autolathes. Their purpose
-                        tr
-                            th
-                            th How to choose a coffee machine and coffee grinder
-                        tr
-                            th
-                            th The structure of the machine. How to maintain, clean and customize coffee machine
-                        tr
-                            th
-                            th The structure of the grinders. How to maintain, clean and customize coffee Molko
-                        tr.active
-                            th
-                            th Making beverages - praktika- machines and espresso rules
-                        tr
-                            th
-                            th Technology and regulations frothed milk
-                        tr
-                            th
-                            th Terms of tasting coffee
-                        tr
-                            th
-                            th Terms of preparation of standard drinks line: espresso, cappuccino, latte and others.
-                        tr
-                            th
-                            th Latte Art - Features practice and the importance of Latte Art in business and the barista
-                        tr
-                            th
-                            th 1 views Latte Art - Pitching
-                        tr
-                            th
-                            th 2 views Latte Art - topping
-                        tr
-                            th
-                            th 3 views Latte Art - Etching
-                        tr
-                            th
-                            th 4 views Latte Art - chocolate chip stencils
+                        .programs__table-title The course also includes:
+                        table.programs__table
+                            tbody
+                                tr.active
+                                    th
+                                    th Coffee machine and grinder - practice - types of coffee machines and coffee grinders
+                                tr.active
+                                    th
+                                    th What makes professional coffee machines and coffee grinders.
+                                tr
+                                    th
+                                    th Main components of coffee machines and coffee-Lathes, autolathes. Their purpose
+                                tr
+                                    th
+                                    th How to choose a coffee machine and coffee grinder
+                                tr
+                                    th
+                                    th The structure of the machine. How to maintain, clean and customize coffee machine
+                                tr
+                                    th
+                                    th The structure of the grinders. How to maintain, clean and customize coffee Molko
+                                tr.active
+                                    th
+                                    th Making beverages - praktika- machines and espresso rules
+                                tr
+                                    th
+                                    th Technology and regulations frothed milk
+                                tr
+                                    th
+                                    th Terms of tasting coffee
+                                tr
+                                    th
+                                    th Terms of preparation of standard drinks line: espresso, cappuccino, latte and others.
+                                tr
+                                    th
+                                    th Latte Art - Features practice and the importance of Latte Art in business and the barista
+                                tr
+                                    th
+                                    th 1 views Latte Art - Pitching
+                                tr
+                                    th
+                                    th 2 views Latte Art - topping
+                                tr
+                                    th
+                                    th 3 views Latte Art - Etching
+                                tr
+                                    th
+                                    th 4 views Latte Art - chocolate chip stencils
+
+
+                    .programs__tab
+                        .programs__tab-content
+                            span.programs__photo
+                                img(src='https://media2.wnyc.org/i/620/372/c/80/photologue/photos/train_loop.jpg')
+                            .programs__bg premium
+                            + programs__info('Premium Course', '320', '2200')
+                        .programs__descr
+                            .programs__descr-item
+                                .programs__descr-item-title
+                                    span France chooses Macron as new president
+                                .programs__descr-item-content
+                                    p Legend of the origin of coffee.
+                                    ul
+                                        for content in programList_1
+                                            li= content
+                            .programs__descr-item
+                                .programs__descr-item-title
+                                    span Le Pen: 'It's now patriots vs globalists'
+                                .programs__descr-item-content
+                                    ul
+                                        for content in programList_2
+                                            li= content
+                            .programs__descr-item
+                                .programs__descr-item-title
+                                    span Ce second tour est aussi un référendum sur l'euro et l'Europe!
+                                ul.programs__descr-item-content
+                                    for content in programList_3
+                                        li= content
+                        .programs__table-title The course also includes:
+                        table.programs__table
+                            tbody
+                                tr.active
+                                    th
+                                    th Coffee machine and grinder - practice - types of coffee machines and coffee grinders
+                                tr.active
+                                    th
+                                    th What makes professional coffee machines and coffee grinders.
+                                tr.active
+                                    th
+                                    th Main components of coffee machines and coffee-Lathes, autolathes. Their purpose
+                                tr.active
+                                    th
+                                    th How to choose a coffee machine and coffee grinder
+                                tr
+                                    th
+                                    th The structure of the machine. How to maintain, clean and customize coffee machine
+                                tr
+                                    th
+                                    th The structure of the grinders. How to maintain, clean and customize coffee Molko
+                                tr.active
+                                    th
+                                    th Making beverages - praktika- machines and espresso rules
+                                tr.active
+                                    th
+                                    th Technology and regulations frothed milk
+                                tr
+                                    th
+                                    th Terms of tasting coffee
+                                tr
+                                    th
+                                    th Terms of preparation of standard drinks line: espresso, cappuccino, latte and others.
+                                tr.active
+                                    th
+                                    th Latte Art - Features practice and the importance of Latte Art in business and the barista
+                                tr
+                                    th
+                                    th 1 views Latte Art - Pitching
+                                tr
+                                    th
+                                    th 2 views Latte Art - topping
+                                tr
+                                    th
+                                    th 3 views Latte Art - Etching
+                                tr
+                                    th
+                                    th 4 views Latte Art - chocolate chip stencils
+
+
+                    .programs__tab
+                        .programs__tab-content
+                            span.programs__photo
+                                img(src='https://ichef-1.bbci.co.uk/news/624/cpsprodpb/909E/production/_95922073_039311277-1.jpg')
+                            .programs__bg platinum
+                            + programs__info('Platinum Course', '400', '3000')
+                        .programs__descr
+                            .programs__descr-item
+                                .programs__descr-item-title
+                                    span Tech Tent - High-tech polls, robot helpers
+                                .programs__descr-item-content
+                                    p Legend of the origin of coffee.
+                                    ul
+                                        for content in programList_1
+                                            li= content
+                            .programs__descr-item
+                                .programs__descr-item-title
+                                    span And he says that the there's a flaw at the heart of what pollsters do which his approach avoids.
+                                .programs__descr-item-content
+                                    ul
+                                        for content in programList_2
+                                            li= content
+                            .programs__descr-item
+                                .programs__descr-item-title
+                                    span Hitachi's Robot - Here to Help
+                                ul.programs__descr-item-content
+                                    for content in programList_3
+                                        li= content
+                        .programs__table-title The course also includes:
+                        table.programs__table
+                            tbody
+                                tr.active
+                                    th
+                                    th Coffee machine and grinder - practice - types of coffee machines and coffee grinders
+                                tr.active
+                                    th
+                                    th What makes professional coffee machines and coffee grinders.
+                                tr.active
+                                    th
+                                    th Main components of coffee machines and coffee-Lathes, autolathes. Their purpose
+                                tr.active
+                                    th
+                                    th How to choose a coffee machine and coffee grinder
+                                tr.active
+                                    th
+                                    th The structure of the machine. How to maintain, clean and customize coffee machine
+                                tr.active
+                                    th
+                                    th The structure of the grinders. How to maintain, clean and customize coffee Molko
+                                tr.active
+                                    th
+                                    th Making beverages - praktika- machines and espresso rules
+                                tr.active
+                                    th
+                                    th Technology and regulations frothed milk
+                                tr.active
+                                    th
+                                    th Terms of tasting coffee
+                                tr.active
+                                    th
+                                    th Terms of preparation of standard drinks line: espresso, cappuccino, latte and others.
+                                tr.active
+                                    th
+                                    th Latte Art - Features practice and the importance of Latte Art in business and the barista
+                                tr.active
+                                    th
+                                    th 1 views Latte Art - Pitching
+                                tr.active
+                                    th
+                                    th 2 views Latte Art - topping
+                                tr.active
+                                    th
+                                    th 3 views Latte Art - Etching
+                                tr.active
+                                    th
+                                    th 4 views Latte Art - chocolate chip stencils
 
 
         section.gallery
+            img(src='/static/img/content/mask2.png').gallery__mask
+            img(src='/static/img/content/mask3.png').gallery__mask.gallery__mask_bottom
+            //img(src='/static/img/content/parallax_5.png' data-type="content").parralax-5
+            span.partners__figure-left
+                svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill='#fff' width="31.5" height="14.5" viewBox="0 0 63 29")
+                    image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAdBAMAAADvFanRAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAFVBMVEUAAAD9/Pj9/Pj9/Pj9/Pj9/PgAAAAvNgAYAAAABXRSTlMA8EtQsEkYnO8AAAABYktHRACIBR1IAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAMUlEQVQoz2NggAHRUGwggIGeCpSNsQEDhhECXPADB4ZQ/CCACgoIumGkAYJpcuAyDgD93nS+qo8CngAAAABJRU5ErkJggg==")
             .content__title.content__title_white gallery
+            span.partners__figure-right
+                svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill='#fff' width="31.5" height="14.5" viewBox="0 0 63 29")
+                    image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAdBAMAAADvFanRAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAFVBMVEUAAAD9/Pj9/Pj9/Pj9/Pj9/PgAAAAvNgAYAAAABXRSTlMA8FBLsPBdG+QAAAABYktHRACIBR1IAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAL0lEQVQoz2MIxQoEGOCADgqUsAIDhpEGXPADBxwhCQcBVFBA0A0jBBBMk4Mg4wAARlpx8rNQBOcAAAAASUVORK5CYII=")
             .content__title-descr.content__title-descr_white You yourself are testing the taste benefits of each method and select the type of cooking yourself
             .gallery__slider
                 .gallery__slider-item
@@ -152,8 +324,24 @@ html(class="no-js", lang="ru")
                     img(src='/static/img/content/slider-1_2.jpg')
                 .gallery__slider-item
                     img(src='/static/img/content/slider-1_3.jpg')
-            .slider__pagination
-            .gallery__mask
+            .gallery__counter
+                .gallery__left-arrow
+                    span
+                        svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" stroke='#fff' fill='none' width="13.9" height="27" viewBox="0 0 27.81 54")
+                            path(d="M26.824,53.005 L0.995,27.000 L26.824,0.995")
+                    span
+                        svg(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" stroke='#fff' width="108.5" height="1" viewBox="0 0 217 2")
+                            path(d="M-0.000,2.000 L-0.000,0.000 L217.000,0.000 L217.000,2.000 L-0.000,2.000 Z")
+                span.gallery__current 1
+                span from
+                span.gallery__count
+                .gallery__right-arrow
+                    span
+                        svg(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" stroke='#fff' width="108.5" height="1" viewBox="0 0 217 2")
+                            path(d="M-0.000,2.000 L-0.000,0.000 L217.000,0.000 L217.000,2.000 L-0.000,2.000 Z")
+                    span
+                        svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" stroke='#fff' fill='none' width="13.9" height="27" viewBox="0 0 27.81 54")
+                            path(d="M0.986,54.415 L26.815,28.410 L0.986,2.405")
         section.testimonials
             .content__wrapper
                 .content__title testimonials
@@ -162,30 +350,39 @@ html(class="no-js", lang="ru")
                     .testimonials__slider-item
                         .testimonials__img-wrap
                             img(src='/static/img/content/testimonials-1.jpg')
-                            a.testimonials__facebook
+                            a(href='https://www.facebook.com/react/').testimonials__facebook
                                 svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#fff" width="10.925" height="20.5" viewBox="0 0 21.85 41")
                                     path(d="M16.079,-0.018 C13.164,-0.018 10.831,0.824 9.078,2.510 C7.326,4.195 6.450,6.566 6.450,9.625 L6.450,14.999 L0.006,14.999 L0.006,22.297 L6.450,22.297 L6.450,41.011 L14.184,41.011 L14.184,22.297 L20.603,22.297 L21.589,14.999 L14.184,14.999 L14.184,10.337 C14.184,9.156 14.436,8.268 14.942,7.675 C15.447,7.083 16.424,6.788 17.874,6.788 L21.841,6.788 L21.841,0.277 C20.477,0.081 18.556,-0.018 16.079,-0.018 L16.079,-0.018 Z")
                         .testimonials__title Alex Nikandrov
                         .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
+
                     .testimonials__slider-item
                         .testimonials__img-wrap
-                            img
-                            .testimonials__facebook
-                                svg.text()
-                        .testimonials__title Alex Nikandrov
-                        .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
-                    .testimonials__slider-item
-                        .testimonials__img-wrap
-                            img
-                            .testimonials__facebook
-                                svg.text()
-                        .testimonials__title Alex Nikandrov
+                            img(src='https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/18222234_642090232652438_8543873309492549948_n.jpg?oh=a92b716fc9691f52cc786532474210a3&oe=59B16C7A')
+                            a(href="https://www.facebook.com/zuck").testimonials__facebook
+                                svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#fff" width="10.925" height="20.5" viewBox="0 0 21.85 41")
+                                    path(d="M16.079,-0.018 C13.164,-0.018 10.831,0.824 9.078,2.510 C7.326,4.195 6.450,6.566 6.450,9.625 L6.450,14.999 L0.006,14.999 L0.006,22.297 L6.450,22.297 L6.450,41.011 L14.184,41.011 L14.184,22.297 L20.603,22.297 L21.589,14.999 L14.184,14.999 L14.184,10.337 C14.184,9.156 14.436,8.268 14.942,7.675 C15.447,7.083 16.424,6.788 17.874,6.788 L21.841,6.788 L21.841,0.277 C20.477,0.081 18.556,-0.018 16.079,-0.018 L16.079,-0.018 Z")
+                        .testimonials__title Alex Karpov
                         .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
 
-            .testimonials__mask
+                    .testimonials__slider-item
+                        .testimonials__img-wrap
+                            img(src='https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/18193678_642087949319333_6363887783895626236_n.jpg?oh=ed74a40c9f63e030ccda7f00524683bb&oe=59795C8C')
+                            a(href='https://www.facebook.com/historytodayUA/?hc_ref=NEWSFEED').testimonials__facebook
+                                svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill="#fff" width="10.925" height="20.5" viewBox="0 0 21.85 41")
+                                    path(d="M16.079,-0.018 C13.164,-0.018 10.831,0.824 9.078,2.510 C7.326,4.195 6.450,6.566 6.450,9.625 L6.450,14.999 L0.006,14.999 L0.006,22.297 L6.450,22.297 L6.450,41.011 L14.184,41.011 L14.184,22.297 L20.603,22.297 L21.589,14.999 L14.184,14.999 L14.184,10.337 C14.184,9.156 14.436,8.268 14.942,7.675 C15.447,7.083 16.424,6.788 17.874,6.788 L21.841,6.788 L21.841,0.277 C20.477,0.081 18.556,-0.018 16.079,-0.018 L16.079,-0.018 Z")
+                        .testimonials__title Alex Vasechkin
+                        .testimonials__descr Our company is grateful for the delicious and freshly roasted coffee in our office every day! Our staff of more than 300 people, appreciate quality and flavor of the coffee, because that would be important for our office staff were every morning refreshed and in a good mood! Recommended!
+
         section.partners
             .content__wrapper
-                .content__title_white partners
+                span.partners__figure-left
+                    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="31.5" height="14.5" viewBox="0 0 63 29")
+                        image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAdBAMAAADvFanRAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAFVBMVEUAAAAiIiIiIiIiIiIiIiIiIiIAAAAqgho7AAAABXRSTlMA8EtQsEkYnO8AAAABYktHRACIBR1IAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAMUlEQVQoz2NggAHRUGwggIGeCpSNsQEDhhECXPADB4ZQ/CCACgoIumGkAYJpcuAyDgD93nS+qo8CngAAAABJRU5ErkJggg==")
+                .content__title our partners
+                span.partners__figure-right
+                    svg.text(xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="31.5" height="14.5" viewBox="0 0 63 29")
+                        image(xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAAdBAMAAADvFanRAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAFVBMVEUAAAAiIiIiIiIiIiIiIiIiIiIAAAAqgho7AAAABXRSTlMA8FBLsPBdG+QAAAABYktHRACIBR1IAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAL0lEQVQoz2MIxQoEGOCADgqUsAIDhpEGXPADBxwhCQcBVFBA0A0jBBBMk4Mg4wAARlpx8rNQBOcAAAAASUVORK5CYII=")
                 .partners__slider
                     .partners__img-wrap
                         img(src='/static/img/content/logo_1.png')
@@ -205,22 +402,57 @@ html(class="no-js", lang="ru")
                         img(src='/static/img/content/logo_6.png')
 
         section.questions
-            .content__title_white questions
-            .content__title-descr
-            form.questions__form
-                .questions__form-fields
-                    input
-                    input
-                .questions__send
-
+            //img(src='/static/img/content/parallax_6.png' data-type="content").parralax-6
+            //img(src='/static/img/content/parallax_8.png' data-type="content").parralax-8
+            .content__wrapper
+                .content__title have questions?
+                .content__title-descr Leave a request and we will contact you shortly
+                form.questions__form
+                    img(src='/static/img/content/questions-img.png').questions__img
+                    .questions__form-fields
+                        input(type='text' placeholder='your name')
+                        input(type='text' placeholder='contact number')
+                    .questions__send
+                        input(type='submit' value="send")
+                        .gallery__right-arrow
+                            span
+                                svg(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" stroke='#fff' width="108.5" height="1" viewBox="0 0 217 2")
+                                    path(d="M-0.000,2.000 L-0.000,0.000 L217.000,0.000 L217.000,2.000 L-0.000,2.000 Z")
+                            span
+                                svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" stroke='#000' fill='none' width="13.9" height="27" viewBox="0 0 27.81 54")
+                                    path(d="M0.986,54.415 L26.815,28.410 L0.986,2.405")
         footer.footer
-            .content__title_white questions
-            .content__title-descr
-            .footer__table
-            .footer__copyright
+            img(src='/static/img/content/mask4.png').footer__mask
+            .content__wrapper
+                .content__title.content__title_white Professional school barista
+                .footer__descr Ernest Miller Hemingway was an American author and journalist. His economical and understated style had a strong influence on 20th-century fiction, while his life of adventure and his public image influenced later generations. Hemingway produced most of his work between the mid-1920s and the mid-1950s, and won the Nobel Prize in Literature in 1954. He published seven novels, six short story collections and two non-fiction works. Three novels, four collections of short stories and three non-fiction works were published posthumously. Many of these are considered classics of American literature. Hemingway was raised in Oak Park, Illinois. After high school he reported for a few months for The Kansas City Star, before leaving for the Italian front to enlist with the World War I ambulance drivers. In 1918, he was seriously wounded and returned home. His wartime experiences formed the basis for his novel A Farewell to Arms. In 1922, he married Hadley Richardson, the first of his four wives. The couple moved to Paris, where he worked as a foreign correspondent, and fell under the influence of the modernist writers and artists of the 1920s "Lost Generation" expatriate community. The Sun Also Rises, Hemingway's first novel, was published in 1926. After his 1927 divorce from Hadley Richardson, Hemingway married Pauline Pfeiffer. They divorced after he returned from Spanish Civil War where he had acted as a journalist, and after which he wrote For Whom the Bell Tolls. Martha Gellhorn became his third wife in 1940. They separated when he met Mary Welsh in London during World War II; during which he was present at the Normandy Landings and liberation of Paris.
+                .footer__info
+                    .footer__info-head
+                        nav
+                            for content in navList_footer
+                                a= content
+                    .footer__info-contacts
+                        .footer__info-item
+                            .footer__info-icon
+                                svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill ='#fff' width="37" height="37" viewBox="0 0 74 74")
+                                    path(d="M68.400,54.377 C68.221,53.840 67.086,53.052 64.996,52.002 C64.428,51.676 63.622,51.226 62.578,50.661 C61.532,50.091 60.585,49.571 59.733,49.089 C58.883,48.616 58.083,48.149 57.337,47.703 C57.218,47.616 56.845,47.354 56.218,46.918 C55.591,46.487 55.060,46.164 54.627,45.955 C54.194,45.745 53.769,45.641 53.351,45.641 C52.754,45.641 52.007,46.067 51.112,46.918 C50.216,47.770 49.395,48.696 48.648,49.698 C47.902,50.699 47.110,51.624 46.275,52.472 C45.438,53.325 44.752,53.751 44.215,53.751 C43.946,53.751 43.610,53.677 43.207,53.525 C42.804,53.375 42.497,53.252 42.289,53.148 C42.080,53.042 41.721,52.832 41.214,52.521 C40.706,52.206 40.422,52.035 40.363,52.002 C36.272,49.732 32.764,47.134 29.838,44.206 C26.911,41.282 24.314,37.771 22.045,33.679 C22.015,33.621 21.844,33.335 21.530,32.826 C21.216,32.322 21.007,31.962 20.902,31.753 C20.798,31.546 20.671,31.240 20.522,30.834 C20.372,30.432 20.298,30.095 20.298,29.825 C20.298,29.288 20.724,28.602 21.575,27.768 C22.425,26.931 23.350,26.141 24.351,25.392 C25.351,24.646 26.277,23.823 27.128,22.928 C27.979,22.032 28.405,21.285 28.405,20.686 C28.405,20.271 28.300,19.841 28.091,19.410 C27.882,18.981 27.561,18.448 27.128,17.819 C26.695,17.193 26.434,16.822 26.345,16.700 C25.897,15.957 25.433,15.155 24.956,14.302 C24.478,13.454 23.955,12.506 23.388,11.457 C22.821,10.415 22.373,9.606 22.045,9.040 C20.999,6.949 20.209,5.813 19.671,5.636 C19.462,5.543 19.148,5.499 18.731,5.499 C17.924,5.499 16.872,5.652 15.573,5.948 C14.275,6.246 13.251,6.561 12.505,6.888 C11.012,7.518 9.429,9.340 7.758,12.354 C6.235,15.165 5.473,17.941 5.473,20.686 C5.473,21.495 5.525,22.278 5.630,23.037 C5.735,23.804 5.922,24.662 6.190,25.615 C6.459,26.572 6.675,27.281 6.840,27.743 C7.003,28.206 7.310,29.036 7.758,30.228 C8.205,31.424 8.475,32.156 8.564,32.426 C9.609,35.354 10.848,37.964 12.281,40.263 C14.640,44.089 17.857,48.040 21.933,52.113 C26.008,56.193 29.957,59.410 33.780,61.770 C36.078,63.204 38.691,64.444 41.617,65.490 C41.886,65.578 42.617,65.847 43.812,66.293 C45.005,66.743 45.834,67.050 46.298,67.212 C46.760,67.379 47.469,67.595 48.425,67.862 C49.380,68.132 50.239,68.319 51.000,68.421 C51.762,68.525 52.545,68.581 53.351,68.581 C56.098,68.581 58.875,67.818 61.682,66.293 C64.698,64.621 66.519,63.039 67.146,61.547 C67.474,60.801 67.788,59.776 68.086,58.477 C68.385,57.178 68.534,56.126 68.534,55.319 C68.534,54.903 68.490,54.587 68.400,54.377 L68.400,54.377 Z")
+                            a(href="tel:+38 000 000 000") +38 000 000 000
+                        .footer__info-item
+                                    .footer__info-icon
+                                        svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill ='#fff' width="22" height="31.5" viewBox="0 0 44 63")
+                                            path(d="M39.599,37.506 L22.000,62.995 L4.374,37.471 C-2.202,28.682 -1.246,14.176 6.443,6.466 C10.599,2.299 16.122,0.004 22.000,0.004 C27.876,0.004 33.401,2.299 37.556,6.466 C45.245,14.176 46.201,28.682 39.599,37.506 ZM35.933,8.092 C32.211,4.361 27.263,2.305 22.000,2.305 C16.736,2.305 11.788,4.361 8.067,8.092 C1.126,15.051 0.272,28.152 6.236,36.125 L22.000,58.952 L37.738,36.162 C43.729,28.152 42.874,15.051 35.933,8.092 ZM22.203,29.914 C17.776,29.914 14.172,26.301 14.172,21.861 C14.172,17.422 17.776,13.809 22.203,13.809 C26.630,13.809 30.233,17.422 30.233,21.861 C30.233,26.301 26.630,29.914 22.203,29.914 ZM22.203,16.109 C19.040,16.109 16.467,18.690 16.467,21.861 C16.467,25.033 19.040,27.613 22.203,27.613 C25.366,27.613 27.939,25.033 27.939,21.861 C27.939,18.690 25.366,16.109 22.203,16.109 Z")
+                                    a(href='https://goo.gl/maps/bp8bQRkYEE62') Ukraine, 61002
+                        .footer__info-item
+                            .footer__info-icon
+                                svg.text(xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" fill ='#fff' width="39.5" height="33" viewBox="0 0 79 66")
+                                    path(d="M69.747,26.623 C61.438,32.417 55.131,36.916 50.825,40.134 C49.381,41.224 48.209,42.080 47.311,42.693 C46.410,43.308 45.214,43.933 43.720,44.574 C42.225,45.215 40.832,45.530 39.540,45.530 L39.502,45.530 L39.464,45.530 C38.173,45.530 36.779,45.215 35.285,44.574 C33.790,43.933 32.593,43.308 31.694,42.693 C30.795,42.080 29.624,41.224 28.179,40.134 C24.759,37.545 18.465,33.041 9.295,26.623 C7.852,25.629 6.572,24.497 5.458,23.216 L5.458,54.297 C5.458,56.021 6.053,57.496 7.244,58.726 C8.434,59.950 9.865,60.566 11.537,60.566 L67.467,60.566 C69.139,60.566 70.570,59.950 71.760,58.726 C72.951,57.496 73.546,56.021 73.546,54.297 L73.546,23.216 C72.457,24.469 71.191,25.604 69.747,26.623 L69.747,26.623 ZM71.742,7.284 C70.538,6.057 69.113,5.446 67.467,5.446 L11.537,5.446 C9.587,5.446 8.086,6.124 7.035,7.483 C5.983,8.835 5.458,10.534 5.458,12.568 C5.458,14.213 6.155,15.992 7.548,17.911 C8.941,19.829 10.422,21.339 11.993,22.437 C12.854,23.060 15.451,24.924 19.783,28.008 C24.114,31.102 27.432,33.487 29.737,35.158 C29.990,35.340 30.529,35.738 31.352,36.354 C32.175,36.962 32.859,37.460 33.404,37.838 C33.948,38.215 34.607,38.640 35.380,39.112 C36.152,39.582 36.881,39.935 37.564,40.166 C38.248,40.406 38.881,40.518 39.464,40.518 L39.502,40.518 L39.540,40.518 C40.122,40.518 40.756,40.406 41.439,40.166 C42.124,39.935 42.852,39.582 43.625,39.112 C44.397,38.640 45.056,38.215 45.600,37.838 C46.145,37.460 46.829,36.962 47.652,36.354 C48.475,35.738 49.013,35.340 49.267,35.158 C51.598,33.487 57.525,29.245 67.049,22.437 C68.897,21.103 70.443,19.496 71.684,17.615 C72.925,15.738 73.546,13.771 73.546,11.707 C73.546,9.987 72.944,8.508 71.742,7.284 Z")
+                            a(href="hello@.com") hello@.com
+                .footer__copyright
+                    span Professional school barista
+                    span site template by
+                        a(href='') NIKANDROV.PRO
 
-        //script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        //script svg4everybody();
+
         script(src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
         script(src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js")
         script(src="static/js/separate-js/start.js")

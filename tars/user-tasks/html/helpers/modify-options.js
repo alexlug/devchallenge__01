@@ -14,7 +14,7 @@ module.exports = {
     //
     // Supported options:
     //
-    // @param {Boolean} indent_inner_html       indent <head> and <body> sections. Default: true
+    // @param {Boolean} indent_inner_html       indent <head> and <body> etc. Default: true
     // @param {Number}  indent_size             indentation size, default: 4
     // @param {String}  indent_char             character to indent with, default: ' '
     // @param {Number}  wrap_line_length        maximum amount of characters per line (0 = disable). Default: 250

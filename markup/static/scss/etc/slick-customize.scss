@@ -1,0 +1,96 @@
+.slick-track {
+    transition: transform 500ms ease 4s;
+    .partners & {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        transition: transform 300ms ease 6s;
+    }
+}
+.slick-slide {
+    .gallery & {
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
+        width: 750px;
+        height: 500px;
+    }
+    .partners & {
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        height: 55px;
+        width: 135px !important;
+    }
+}
+.slick-next_new {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    @include bg-svg($slide-arrow);
+    cursor: pointer;
+    .gallery & {
+        top: inherit;
+        bottom: -65px;
+        left: calc(50% + 192px);
+        transform: translateX(-50%);
+        border: 1px solid $beige;
+        background: transparent;
+        color: transparent;
+        width: 67px;
+        height: 67px;
+        &:hover {
+            .no-touch & {
+                background-color: rgba(0,0,0, .1);
+            }
+        }
+    }
+}
+.slick-prev_new {
+    position: absolute;
+    left: -12px;
+    top: 50%;
+    transform: translate(0, -50%) rotate(-180deg);
+    @include bg-svg($slide-arrow);
+    cursor: pointer;
+    .gallery & {
+        top: inherit;
+        bottom: -65px;
+        left: calc(50% - 192px);
+        transform: translateX(-50%);
+        border: 1px solid $beige;
+        background: transparent;
+        color: transparent;
+        width: 67px;
+        height: 67px;
+        transition: all .5s ease;
+        &:hover {
+            .no-touch & {
+                background-color: rgba(0,0,0, .1);
+            }
+        }
+    }
+}
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+    li {
+        margin: 0 10px;
+        button {
+            outline: none;
+            border: none;
+            width: 15px;
+            height: 15px;
+            color: transparent;
+            border-radius: 50%;
+            background-color: $black;
+        }
+        &.slick-active {
+            button {
+                background-color: $beige;
+            }
+        }
+    }
+}
